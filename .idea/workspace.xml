@@ -7,15 +7,18 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="test: create first tests">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/20240504180730_create_subscriptions_table.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/init_db.sh" afterDir="false" />
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="fix: db scripts">
+      <change afterPath="$PROJECT_DIR$/src/configuration.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/monitor.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/subscriptions.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/startup.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/monitor_it.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/subscriptions_it.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/justfile" beforeDir="false" afterPath="$PROJECT_DIR$/justfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/healt_check.rs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,39 +53,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cargo.Test healt_check.executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test health_check.executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test signup_returns_200_with_valid_data.executor&quot;: &quot;Debug&quot;,
-    &quot;Cargo.Test signup_returns_400_with_invalid_data.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/bastian.bueld/Desktop/Projects/zero-to-production-in-rust&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
-    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/bastian.bueld/.nvm/versions/node/v18.16.0/lib/node_modules/prettier&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cargo.Run zero-to-production-in-rust.executor": "Run",
+    "Cargo.Test healt_check.executor": "Run",
+    "Cargo.Test health_check.executor": "Run",
+    "Cargo.Test health_check_it.executor": "Run",
+    "Cargo.Test signup_returns_200_with_valid_data.executor": "Run",
+    "Cargo.Test signup_returns_400_with_invalid_data.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/bastian.bueld/Desktop/Projects/zero-to-production-in-rust",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.first.attach.projects": "true",
+    "prettierjs.PrettierConfiguration.Package": "/Users/bastian.bueld/.nvm/versions/node/v18.16.0/lib/node_modules/prettier",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.keymap"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
@@ -110,8 +115,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test healtch_check" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package zero-to-production-in-rust --test healt_check healtch_check -- --exact" />
+    <configuration name="Test health_check" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package zero-to-production-in-rust --test healt_check health_check -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="false" />
@@ -127,11 +132,11 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test health_check" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package zero-to-production-in-rust --test healt_check health_check -- --exact" />
+    <configuration name="Test health_check_it" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package zero-to-production-in-rust --test healt_check health_check_it -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
-      <option name="emulateTerminal" value="false" />
+      <option name="emulateTerminal" value="true" />
       <option name="channel" value="DEFAULT" />
       <option name="requiredFeatures" value="true" />
       <option name="allFeatures" value="false" />
@@ -181,8 +186,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Cargo.Test signup_returns_200_with_valid_data" />
-        <item itemvalue="Cargo.Test health_check" />
-        <item itemvalue="Cargo.Test signup_returns_400_with_invalid_data" />
+        <item itemvalue="Cargo.Test health_check_it" />
+        <item itemvalue="Cargo.Test healt_check" />
         <item itemvalue="Cargo.Test healt_check" />
         <item itemvalue="Cargo.Test healt_check" />
       </list>
@@ -211,6 +216,7 @@
       <workItem from="1714673236251" duration="50000" />
       <workItem from="1714673298525" duration="9663000" />
       <workItem from="1714849360136" duration="205000" />
+      <workItem from="1715246522459" duration="1002000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -262,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714673712942</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: db scripts">
+      <option name="closed" value="true" />
+      <created>1715246414635</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715246414635</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,31 +301,21 @@
     <MESSAGE value="feat(CI): enable on push" />
     <MESSAGE value="feat(justfile): create" />
     <MESSAGE value="test: create first tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="test: create first tests" />
+    <MESSAGE value="fix: db scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: db scripts" />
   </component>
-  <component name="WfRunsListSearchHistory"><![CDATA[{
-  "history": [
+  <component name="WfRunsListSearchHistory">{
+  &quot;history&quot;: [
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     }
   ],
-  "lastFilter": {
-    "branch": "main",
-    "currentBranchFilter": true
+  &quot;lastFilter&quot;: {
+    &quot;branch&quot;: &quot;main&quot;,
+    &quot;currentBranchFilter&quot;: true
   }
-}]]></component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/tests/healt_check.rs</url>
-          <line>55</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
+}</component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />

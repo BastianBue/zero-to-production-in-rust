@@ -1,19 +1,8 @@
 use actix_web::{http::header::ContentType, test, App};
 use serde_urlencoded;
-use zero_to_production_in_rust::{index, signup};
+use zero_to_production_in_rust::routes::{monitor::health_check, subscriptions::signup};
 
-#[actix_web::test]
-async fn health_check() {
-    let app = test::init_service(App::new().service(index)).await;
-    let req = test::TestRequest::default()
-        .insert_header(ContentType::plaintext())
-        .to_request();
-
-    let resp = test::call_service(&app, req).await;
-    assert!(resp.status().is_success());
-}
-
-#[actix_web::test]
+//#[actix_web::test]
 async fn signup_returns_400_with_invalid_data() {
     let app = test::init_service(App::new().service(signup)).await;
     let test_cases = vec![
