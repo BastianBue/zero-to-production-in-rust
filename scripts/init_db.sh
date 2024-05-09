@@ -43,7 +43,7 @@ if [[ -z "${SKIP_DOCKER}" ]]; then
 fi
 
 echo "Waiting for postgres to start..."
-until PGPASSWORD="$DB_PASSWORD"  psql -h "$DB_HOST" -U "$DB_USER" -p "$DB_PORT" -c '\q'; do
+until PGPASSWORD="$DB_PASSWORD"  psql -h "$DB_HOST" -U "$DB_USER" -p "$DB_PORT" -c '\q' >> /dev/null; do
   >&2 echo "..."
   sleep 1
 done
