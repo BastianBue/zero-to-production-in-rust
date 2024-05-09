@@ -7,18 +7,15 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="fix: db scripts">
-      <change afterPath="$PROJECT_DIR$/src/configuration.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/monitor.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/subscriptions.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/startup.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/monitor_it.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/subscriptions_it.rs" afterDir="false" />
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: add a configuration file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/healt_check.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/startup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/monitor_it.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/monitor_it.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/subscriptions_it.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/subscriptions_it.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +56,11 @@
     "Cargo.Test healt_check.executor": "Run",
     "Cargo.Test health_check.executor": "Run",
     "Cargo.Test health_check_it.executor": "Run",
+    "Cargo.Test signup_returns_200_with_valid_data (1).executor": "Run",
     "Cargo.Test signup_returns_200_with_valid_data.executor": "Run",
+    "Cargo.Test signup_returns_400_with_invalid_data (1).executor": "Run",
     "Cargo.Test signup_returns_400_with_invalid_data.executor": "Run",
+    "Cargo.Test subscriptions_it.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
@@ -95,11 +95,13 @@
     <option name="myCommands">
       <command value="just wat" />
       <command value="just migrate-locally" />
+      <command value="just watch" />
+      <command value="just spin-up-db" />
     </option>
   </component>
-  <component name="RunManager" selected="Cargo.Test signup_returns_200_with_valid_data">
-    <configuration name="Test healt_check" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package zero-to-production-in-rust --test healt_check" />
+  <component name="RunManager" selected="Cargo.Test signup_returns_200_with_valid_data (1)">
+    <configuration name="Run zero-to-production-in-rust" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="run --package zero-to-production-in-rust --bin zero-to-production-in-rust" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -115,25 +117,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test health_check" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package zero-to-production-in-rust --test healt_check health_check -- --exact" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <option name="emulateTerminal" value="false" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test health_check_it" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package zero-to-production-in-rust --test healt_check health_check_it -- --exact" />
+    <configuration name="Test signup_returns_200_with_valid_data (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package zero-to-production-in-rust --test subscriptions_it signup_returns_200_with_valid_data -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -149,8 +134,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test signup_returns_200_with_valid_data" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package zero-to-production-in-rust --test healt_check signup_returns_200_with_valid_data -- --exact" />
+    <configuration name="Test signup_returns_400_with_invalid_data (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package zero-to-production-in-rust --test subscriptions_it signup_returns_400_with_invalid_data -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -183,13 +168,30 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test subscriptions_it" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package zero-to-production-in-rust --test subscriptions_it" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cargo.Test signup_returns_200_with_valid_data" />
-        <item itemvalue="Cargo.Test health_check_it" />
-        <item itemvalue="Cargo.Test healt_check" />
-        <item itemvalue="Cargo.Test healt_check" />
-        <item itemvalue="Cargo.Test healt_check" />
+        <item itemvalue="Cargo.Test signup_returns_200_with_valid_data (1)" />
+        <item itemvalue="Cargo.Test signup_returns_400_with_invalid_data (1)" />
+        <item itemvalue="Cargo.Run zero-to-production-in-rust" />
+        <item itemvalue="Cargo.Test subscriptions_it" />
+        <item itemvalue="Cargo.Test subscriptions_it" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +218,7 @@
       <workItem from="1714673236251" duration="50000" />
       <workItem from="1714673298525" duration="9663000" />
       <workItem from="1714849360136" duration="205000" />
-      <workItem from="1715246522459" duration="1002000" />
+      <workItem from="1715246522459" duration="3569000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -276,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715246414635</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactor modularize">
+      <option name="closed" value="true" />
+      <created>1715247601169</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715247601169</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +312,9 @@
     <MESSAGE value="feat(justfile): create" />
     <MESSAGE value="test: create first tests" />
     <MESSAGE value="fix: db scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: db scripts" />
+    <MESSAGE value="refactor modularize" />
+    <MESSAGE value="feat: add a configuration file" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add a configuration file" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
