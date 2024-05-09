@@ -7,14 +7,12 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: add a configuration file">
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="test: connect to database from tests">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/push.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/push.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configuration.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/monitor_it.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/monitor_it.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/subscriptions_it.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/subscriptions_it.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +50,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Cargo.Build `Test signup_returns_200_with_valid_data (1)`.executor": "Run",
     "Cargo.Run zero-to-production-in-rust.executor": "Run",
     "Cargo.Test healt_check.executor": "Run",
     "Cargo.Test health_check.executor": "Run",
@@ -218,7 +217,7 @@
       <workItem from="1714673236251" duration="50000" />
       <workItem from="1714673298525" duration="9663000" />
       <workItem from="1714849360136" duration="205000" />
-      <workItem from="1715246522459" duration="3569000" />
+      <workItem from="1715246522459" duration="6488000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -314,7 +313,8 @@
     <MESSAGE value="fix: db scripts" />
     <MESSAGE value="refactor modularize" />
     <MESSAGE value="feat: add a configuration file" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add a configuration file" />
+    <MESSAGE value="test: connect to database from tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: connect to database from tests" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [

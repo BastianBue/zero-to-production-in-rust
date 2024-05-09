@@ -19,7 +19,7 @@ impl DatabaseSettings {
     pub fn connection_string(&self) -> String {
         return format!(
             "postgres://{}:{}@{}:{}/{}",
-            self.host, self.port, self.username, self.password, self.db_name
+            self.username, self.password, self.host, self.port, self.db_name
         );
     }
 }
