@@ -1,74 +1,111 @@
 use actix_web::{http::header::ContentType, test, App};
-use serde_urlencoded;
-use sqlx::{Connection, PgConnection};
-use zero_to_production_in_rust::configuration::get_configuration;
-use zero_to_production_in_rust::routes::subscriptions::signup;
+use newsletter::configuration::{get_configuration, DatabaseSettings};
+use newsletter::startup::run;
+use sqlx::{Connection, Executor, PgConnection, PgPool};
+use std::net::TcpListener;
+use uuid::Uuid;
 
-//#[actix_web::test]
-async fn signup_returns_400_with_invalid_data() {
-    let app = test::init_service(App::new().service(signup)).await;
-    let test_cases = vec![
-        ([("name", "Bastian"), ("email", "")], "email is required"),
-        ([("name", ""), ("email", "hi@gmx.de")], "name is required"),
-        ([("name", ""), ("email", "")], "invalid input"),
-    ];
+pub struct TestApp {
+    pub address: String,
+    pub db_pool: PgPool,
+}
 
-    for (payload, _error_message) in test_cases {
-        let body = serde_urlencoded::to_string(payload).unwrap();
-        let req = test::TestRequest::post()
-            .uri("/signup")
-            .insert_header(ContentType::form_url_encoded())
-            .set_payload(body)
-            .to_request();
+async fn spawn_app() -> TestApp {
+    let listener = TcpListener::bind("127.0.0.1:0").expect("Failed to bind random port");
+    // We retrieve the port assigned to us by the OS
+    let port = listener.local_addr().unwrap().port();
+    let address = format!("http://127.0.0.1:{}", port);
 
-        let resp = test::call_service(&app, req).await;
-        assert_eq!(
-            resp.status().as_u16(),
-            400,
-            "The request payload: {:?} should have failed with a 400 Bad Request",
-            payload
-        );
+    let mut configuration = get_configuration().expect("Failed to read configuration.");
+    configuration.database.db_name = Uuid::new_v4().to_string();
+    let connection_pool = configure_database(&configuration.database).await;
+
+    let server = run(listener, connection_pool.clone()).expect("Failed to bind address");
+    let _ = tokio::spawn(server);
+    TestApp {
+        address,
+        db_pool: connection_pool,
     }
 }
 
-#[actix_web::test]
-async fn signup_returns_200_with_valid_data() {
-    let app = test::init_service(App::new().service(signup)).await;
-    let test_cases = vec![[("name", "Bastian"), ("email", "hi@gmx.de")]];
+pub async fn configure_database(config: &DatabaseSettings) -> PgPool {
+    // Create database
+    let mut connection = PgConnection::connect(&config.connection_string_without_db())
+        .await
+        .expect("Failed to connect to Postgres");
+    connection
+        .execute(&*format!(r#"CREATE DATABASE "{}";"#, config.db_name))
+        .await
+        .expect("Failed to create database.");
 
-    let connection_string = get_configuration()
-        .expect("failed to load configuration")
-        .database
-        .connection_string();
-
-    print!("Connection string: {}", connection_string);
-
-    let mut postgres_connection = PgConnection::connect(&connection_string)
+    // Migrate database
+    let connection_pool = PgPool::connect(&config.connection_string())
         .await
         .expect("Failed to connect to Postgres.");
+    sqlx::migrate!("./migrations")
+        .run(&connection_pool)
+        .await
+        .expect("Failed to migrate the database");
 
-    for payload in test_cases {
-        let body = serde_urlencoded::to_string(payload).unwrap();
+    connection_pool
+}
 
-        let req = test::TestRequest::post()
-            .uri("/signup")
-            .insert_header(ContentType::form_url_encoded())
-            .set_payload(body)
-            .to_request();
+#[tokio::test]
+async fn subscribe_returns_a_200_for_valid_form_data() {
+    // Arrange
+    let app = spawn_app().await;
+    let client = reqwest::Client::new();
+    let body = "name=le%20guin&email=ursula_le_guin%40gmail.com";
 
-        let resp = test::call_service(&app, req).await;
-        println!("Response: {:?}", resp);
+    // Act
+    let response = client
+        .post(&format!("{}/subscriptions", &app.address))
+        .header("Content-Type", "application/x-www-form-urlencoded")
+        .body(body)
+        .send()
+        .await
+        .expect("Failed to execute request.");
 
-        let saved = sqlx::query!("SELECT email, name FROM subscriptions",)
-            .fetch_one(&mut postgres_connection)
+    // Assert
+    assert_eq!(200, response.status().as_u16());
+
+    let saved = sqlx::query!("SELECT email, name FROM subscriptions",)
+        .fetch_one(&app.db_pool)
+        .await
+        .expect("Failed to fetch saved subscription.");
+
+    assert_eq!(saved.email, "ursula_le_guin@gmail.com");
+    assert_eq!(saved.name, "le guin");
+}
+
+#[tokio::test]
+async fn subscribe_returns_a_400_when_data_is_missing() {
+    // Arrange
+    let app = spawn_app().await;
+    let client = reqwest::Client::new();
+    let test_cases = vec![
+        ("name=le%20guin", "missing the email"),
+        ("email=ursula_le_guin%40gmail.com", "missing the name"),
+        ("", "missing both name and email"),
+    ];
+
+    for (invalid_body, error_message) in test_cases {
+        // Act
+        let response = client
+            .post(&format!("{}/subscriptions", &app.address))
+            .header("Content-Type", "application/x-www-form-urlencoded")
+            .body(invalid_body)
+            .send()
             .await
-            .expect("Failed to fetch saved subscription");
+            .expect("Failed to execute request.");
 
+        // Assert
         assert_eq!(
-            resp.status().as_u16(),
-            200,
-            "The request payload: {:?} should have succeeded with a 200 OK",
-            payload
+            400,
+            response.status().as_u16(),
+            // Additional customised error message on test failure
+            "The API did not fail with 400 Bad Request when the payload was {}.",
+            error_message
         );
     }
 }

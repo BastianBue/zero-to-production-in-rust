@@ -1,21 +1,25 @@
 [package]
-name = "zero-to-production-in-rust"
+name = "newsletter"
 version = "0.1.0"
+authors = ["Bastian Bül <hi@hi.com>"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "newsletter"
 
 [dependencies]
-actix-web = "4.5.1"
-reqwest = "0.12.0"
-tokio = { version = "1.36.0", features = ["macros"] }
-serde_urlencoded = "0.7.1"
-serde = { version = "1.0.197", features = ["derive"] }
-config = "0.13"
-uuid = { vwersion = "1", features = ["v4"] }
+actix-web = "4"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+serde = "1.0.115"
+config = { version = "0.13", default-features = false, features = ["yaml"] }
+sqlx = { version = "0.7", default-features = false, features = ["runtime-tokio-rustls", "macros", "postgres", "uuid", "chrono", "migrate"] }
+uuid = { version = "1", features = ["v4"] }
 chrono = { version = "0.4.22", default-features = false, features = ["clock"] }
 
-[dependencies.sqlx]
-version = "0.7"
-default-features = false
-features = ["runtime-tokio-rustls", "macros", "postgres", "uuid", "chrono", "migrate"]
+[dev-dependencies]
+reqwest = { version = "0.11", features = ["json"] }

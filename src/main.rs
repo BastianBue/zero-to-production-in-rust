@@ -1,7 +1,16 @@
-use std::io::Error;
-use zero_to_production_in_rust::startup::{db_connect, run};
+use newsletter::configuration::get_configuration;
+use newsletter::startup::run;
+use sqlx::postgres::PgPool;
+use std::net::TcpListener;
 
-#[actix_web::main]
-async fn main() -> Result<(), Error> {
-    run(db_connect().await).await
+#[tokio::main]
+async fn main() -> std::io::Result<()> {
+    let configuration = get_configuration().expect("Failed to read configuration.");
+    let connection_pool = PgPool::connect(&configuration.database.connection_string())
+        .await
+        .expect("Failed to connect to Postgres.");
+    let address = format!("127.0.0.1:{}", configuration.application_port);
+    let listener = TcpListener::bind(address)?;
+    run(listener, connection_pool)?.await?;
+    Ok(())
 }
