@@ -57,6 +57,7 @@ async fn signup_returns_200_with_valid_data() {
             .to_request();
 
         let resp = test::call_service(&app, req).await;
+        println!("Response: {:?}", resp);
 
         let saved = sqlx::query!("SELECT email, name FROM subscriptions",)
             .fetch_one(&mut postgres_connection)
