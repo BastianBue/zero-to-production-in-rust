@@ -7,13 +7,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: implement without pool">
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="fix: broken test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configuration.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/subscriptions.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/subscriptions.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/subscriptions_it.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/subscriptions_it.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +63,7 @@
     "Cargo.Test signup_returns_400_with_invalid_data.executor": "Run",
     "Cargo.Test subscribe_returns_a_200_for_valid_form_data (1).executor": "Run",
     "Cargo.Test subscribe_returns_a_200_for_valid_form_data.executor": "Run",
+    "Cargo.Test subscribe_returns_a_400_when_data_is_missing.executor": "Run",
     "Cargo.Test subscriptions_it.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -321,7 +318,8 @@
     <MESSAGE value="feat: add a configuration file" />
     <MESSAGE value="test: connect to database from tests" />
     <MESSAGE value="feat: implement without pool" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement without pool" />
+    <MESSAGE value="fix: broken test" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: broken test" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [

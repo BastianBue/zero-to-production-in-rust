@@ -1,4 +1,3 @@
-use actix_web::{http::header::ContentType, test, App};
 use newsletter::configuration::{get_configuration, DatabaseSettings};
 use newsletter::startup::run;
 use sqlx::{Connection, Executor, PgConnection, PgPool};
