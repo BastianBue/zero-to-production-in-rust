@@ -7,11 +7,11 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="fix: broken test">
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: apply logger middleware">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/subscriptions.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/subscriptions.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +222,7 @@
       <workItem from="1714849360136" duration="205000" />
       <workItem from="1715246522459" duration="8994000" />
       <workItem from="1715421099863" duration="1815000" />
-      <workItem from="1716137997945" duration="844000" />
+      <workItem from="1716137997945" duration="5166000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -290,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715247601169</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: apply logger middleware">
+      <option name="closed" value="true" />
+      <created>1716139715410</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716139715410</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +329,8 @@
     <MESSAGE value="test: connect to database from tests" />
     <MESSAGE value="feat: implement without pool" />
     <MESSAGE value="fix: broken test" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: broken test" />
+    <MESSAGE value="feat: apply logger middleware" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: apply logger middleware" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [
@@ -332,10 +341,14 @@
     {
       "branch": "main",
       "currentBranchFilter": true
+    },
+    {
+      "branch": "feat/chapter-3.9",
+      "currentBranchFilter": true
     }
   ],
   "lastFilter": {
-    "branch": "main",
+    "branch": "feat/chapter-3.9",
     "currentBranchFilter": true
   }
 }]]></component>
