@@ -1,3 +1,4 @@
+use env_logger::Env;
 use newsletter::configuration::get_configuration;
 use newsletter::startup::run;
 use sqlx::postgres::PgPool;
@@ -11,6 +12,9 @@ async fn main() -> std::io::Result<()> {
         .expect("Failed to connect to Postgres.");
     let address = format!("127.0.0.1:{}", configuration.application_port);
     let listener = TcpListener::bind(address)?;
+
+    env_logger::Builder::from_env(Env::default().default_filter_or("info")).init();
+
     run(listener, connection_pool)?.await?;
     Ok(())
 }
