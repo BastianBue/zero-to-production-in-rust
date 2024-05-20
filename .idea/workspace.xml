@@ -7,14 +7,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: implement tracing macro">
-      <change afterPath="$PROJECT_DIR$/configuration.json" afterDir="false" />
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: working state">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configuration.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/subscriptions.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/subscriptions.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/startup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/subscriptions_it.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/subscriptions_it.rs" afterDir="false" />
     </list>
@@ -228,7 +223,7 @@
       <workItem from="1715246522459" duration="8994000" />
       <workItem from="1715421099863" duration="1815000" />
       <workItem from="1716137997945" duration="6889000" />
-      <workItem from="1716197498646" duration="7556000" />
+      <workItem from="1716197498646" duration="7639000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -320,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716202735924</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: working state">
+      <option name="closed" value="true" />
+      <created>1716205620599</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716205620599</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +357,8 @@
     <MESSAGE value="feat: apply logger middleware" />
     <MESSAGE value="feat: implement tracing" />
     <MESSAGE value="feat: implement tracing macro" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement tracing macro" />
+    <MESSAGE value="feat: working state" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: working state" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [

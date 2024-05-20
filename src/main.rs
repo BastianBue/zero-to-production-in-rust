@@ -20,7 +20,7 @@ async fn main() -> std::io::Result<()> {
     init_subscriber(get_subscriber(
         "newsletter".into(),
         "info".into(),
-        std::io::sink,
+        std::io::stdout,
     ));
 
     run(listener, connection_pool)?.await?;
