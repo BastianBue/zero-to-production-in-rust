@@ -7,12 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: dont sink logs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/justfile" beforeDir="false" afterPath="$PROJECT_DIR$/justfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configuration.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.rs" afterDir="false" />
-    </list>
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="chore: use json configuration instead to pacify cargo deny" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -223,7 +218,7 @@
       <workItem from="1715246522459" duration="8994000" />
       <workItem from="1715421099863" duration="1815000" />
       <workItem from="1716137997945" duration="6889000" />
-      <workItem from="1716197498646" duration="8057000" />
+      <workItem from="1716197498646" duration="8763000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -331,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716205706484</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="chore: use json configuration instead to pacify cargo deny">
+      <option name="closed" value="true" />
+      <created>1716206158326</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716206158326</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +370,8 @@
     <MESSAGE value="feat: implement tracing macro" />
     <MESSAGE value="feat: working state" />
     <MESSAGE value="feat: dont sink logs" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: dont sink logs" />
+    <MESSAGE value="chore: use json configuration instead to pacify cargo deny" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: use json configuration instead to pacify cargo deny" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [
