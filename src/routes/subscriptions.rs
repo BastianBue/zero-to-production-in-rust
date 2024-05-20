@@ -3,7 +3,6 @@ use actix_web::{post, web, HttpResponse, Responder};
 use chrono::Utc;
 use serde::Deserialize;
 use sqlx::PgPool;
-use tracing::Instrument;
 use uuid::Uuid;
 
 #[derive(Deserialize)]
@@ -17,7 +16,6 @@ struct FormData {
     name = "Adding a new Subscriber"
     skip(form, _connection),
     fields(
-        request_id = %Uuid::new_v4(),
         subscriber_email = %form.email,
         subscriber_name = %form.name,
     )
@@ -45,7 +43,7 @@ pub async fn insert_subscriber(pool: &PgPool, form: &FormData) -> Result<(), sql
         form.name,
         Utc::now()
     )
-    .execute(pool.get_ref())
+    .execute(pool)
     .await
     .map_err(|e| {
         tracing::error!("Failed to execute query: {:?}", e);
