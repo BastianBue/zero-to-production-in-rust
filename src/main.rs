@@ -1,11 +1,8 @@
 use newsletter::configuration::get_configuration;
 use newsletter::startup::run;
+use newsletter::telemetry::{get_subscriber, init_subscriber};
 use sqlx::postgres::PgPool;
 use std::net::TcpListener;
-use tracing::subscriber::set_global_default;
-use tracing_bunyan_formatter::{BunyanFormattingLayer, JsonStorageLayer};
-use tracing_subscriber::layer::SubscriberExt;
-use tracing_subscriber::{EnvFilter, Registry};
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
@@ -18,13 +15,11 @@ async fn main() -> std::io::Result<()> {
     let address = format!("127.0.0.1:{}", configuration.application_port);
     let listener = TcpListener::bind(address)?;
 
-    let env_filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
-    let formatting_layer = BunyanFormattingLayer::new("newsletter".into(), std::io::stdout);
-    let subscriber = Registry::default()
-        .with(env_filter)
-        .with(JsonStorageLayer)
-        .with(formatting_layer);
-    set_global_default(subscriber).expect("Failed to set subscriber");
+    init_subscriber(get_subscriber(
+        "newsletter".into(),
+        "info".into(),
+        std::io::sink,
+    ));
 
     run(listener, connection_pool)?.await?;
     Ok(())

@@ -1,6 +1,5 @@
 use actix_web::{http::header::ContentType, test, App};
-use serde_urlencoded;
-use zero_to_production_in_rust::routes::monitor::health_check;
+use newsletter::routes::monitor::health_check;
 
 #[actix_web::test]
 async fn health_check_it() {
