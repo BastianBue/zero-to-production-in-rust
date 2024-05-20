@@ -1,9 +1,41 @@
 use secrecy::{ExposeSecret, Secret};
 
+pub enum Environment {
+    Local,
+    Production,
+}
+
+impl Environment {
+    pub fn as_string(&self) -> &'static str {
+        match self {
+            Environment::Local => "dev",
+            Environment::Production => "prod",
+        }
+    }
+}
+
+impl TryFrom<String> for Environment {
+    type Error = String;
+
+    fn try_from(value: String) -> Result<Self, Self::Error> {
+        match value.to_lowercase().as_str() {
+            "dev" => Ok(Environment::Local),
+            "prod" => Ok(Environment::Production),
+            _ => Err(format!("{} is not a valid environment", value)),
+        }
+    }
+}
+
 #[derive(serde::Deserialize)]
 pub struct Settings {
+    pub application_settings: ApplicationSettings,
     pub database: DatabaseSettings,
-    pub application_port: u16,
+}
+
+#[derive(serde::Deserialize)]
+pub struct ApplicationSettings {
+    pub port: u16,
+    pub host: String,
 }
 
 #[derive(serde::Deserialize)]
@@ -39,11 +71,22 @@ impl DatabaseSettings {
 }
 
 pub fn get_configuration() -> Result<Settings, config::ConfigError> {
+    let environment: Environment = std::env::var("APP_ENV")
+        .unwrap_or_else(|_| "dev".into())
+        .try_into()
+        .expect("Failed to parse APP_ENV");
+
+    let file_name = format!(
+        "configuration/{}-configuration.json",
+        environment.as_string()
+    );
+
     let settings = config::Config::builder()
         .add_source(config::File::new(
-            "configuration.json",
+            "configuration/base-configuration.json",
             config::FileFormat::Json,
         ))
+        .add_source(config::File::new(&file_name, config::FileFormat::Json))
         .build()?;
     settings.try_deserialize::<Settings>()
 }
