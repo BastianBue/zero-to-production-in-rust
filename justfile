@@ -8,3 +8,7 @@ show-udeps:
   cargo +nightly udeps
 check-deps:
   cargo deny check advisories
+build-docker:
+  docker build -t newsletter .
+run-docker:
+    docker run -p 8080:8080 newsletter
