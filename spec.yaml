@@ -1,0 +1,17 @@
+name: newsletter
+region: fra
+services:
+  - name: newsletter
+    dockerfile_path: Dockerfile
+    source_dir: .
+    github:
+      branch: Chapter-5
+      deploy_on_push: true
+      repo: BastianBue/zero-to-production-in-rust
+    health_check:
+      http_path: /health_check
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    routes:
+      - path: /

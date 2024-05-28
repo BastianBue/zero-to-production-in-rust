@@ -7,14 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: hirarchical configuration.json">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/justfile" beforeDir="false" afterPath="$PROJECT_DIR$/justfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/subscriptions.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/subscriptions.rs" afterDir="false" />
-    </list>
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: add dockerfile" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="root-chapter-03-part1" />
+        <entry key="$PROJECT_DIR$" value="feat/chapter-3.9" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +66,7 @@
     &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/chapter-3.9&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Chapter-5&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/bastian.bueld/Desktop/Projects/zero-to-production-in-rust&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -233,7 +226,11 @@
       <workItem from="1716197498646" duration="17075000" />
       <workItem from="1716476822653" duration="631000" />
       <workItem from="1716558851804" duration="654000" />
-      <workItem from="1716835502226" duration="729000" />
+      <workItem from="1716835502226" duration="1510000" />
+      <workItem from="1716837339919" duration="1124000" />
+      <workItem from="1716920760273" duration="1134000" />
+      <workItem from="1716921905378" duration="21000" />
+      <workItem from="1716921936047" duration="133000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -365,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716235628358</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: add dockerfile">
+      <option name="closed" value="true" />
+      <created>1716836566623</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716836566623</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +409,8 @@
     <MESSAGE value="chore: use json configuration instead to pacify cargo deny" />
     <MESSAGE value="chore: sqlx prepare" />
     <MESSAGE value="feat: hirarchical configuration.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: hirarchical configuration.json" />
+    <MESSAGE value="feat: add dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add dockerfile" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
@@ -414,6 +420,14 @@
     },
     {
       &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
+    },
+    {
+      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
+      &quot;currentBranchFilter&quot;: true
+    },
+    {
+      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
       &quot;currentBranchFilter&quot;: true
     },
     {
