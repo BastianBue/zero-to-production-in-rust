@@ -1,4 +1,4 @@
-use actix_web::{web, HttpResponse};
+use actix_web::{post, web, HttpResponse};
 use chrono::Utc;
 use sqlx::PgPool;
 use uuid::Uuid;
@@ -9,6 +9,7 @@ pub struct FormData {
     name: String,
 }
 
+#[post("/subscriptions")]
 #[allow(clippy::async_yields_async)]
 #[tracing::instrument(
 name = "Adding a new subscriber",
