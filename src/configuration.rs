@@ -1,5 +1,6 @@
 use secrecy::{ExposeSecret, Secret};
 use serde_aux::field_attributes::deserialize_number_from_string;
+use sqlx::postgres::PgConnectOptions;
 
 pub enum Environment {
     Local,
@@ -51,25 +52,21 @@ pub struct DatabaseSettings {
 }
 
 impl DatabaseSettings {
-    pub fn connection_string(&self) -> Secret<String> {
-        Secret::new(format!(
-            "postgres://{}:{}@{}:{}/{}",
-            self.username,
-            self.password.expose_secret(),
-            self.host,
-            self.port,
-            self.db_name
-        ))
+    pub fn connect_option(&self) -> PgConnectOptions {
+        PgConnectOptions::new()
+            .username(&self.username)
+            .password(self.password.expose_secret())
+            .host(&self.host)
+            .port(self.port)
+            .database(&self.db_name)
     }
 
-    pub fn connection_string_without_db(&self) -> Secret<String> {
-        Secret::new(format!(
-            "postgres://{}:{}@{}:{}",
-            self.username,
-            self.password.expose_secret(),
-            self.host,
-            self.port
-        ))
+    pub fn connect_options_root(&self) -> PgConnectOptions {
+        PgConnectOptions::new()
+            .username(&self.username)
+            .password(self.password.expose_secret())
+            .host(&self.host)
+            .port(self.port)
     }
 }
 
@@ -90,7 +87,11 @@ pub fn get_configuration() -> Result<Settings, config::ConfigError> {
             config::FileFormat::Json,
         ))
         .add_source(config::File::new(&file_name, config::FileFormat::Json))
-        .add_source(config::Environment::with_prefix("APP").prefix_separator("_").separator("__")
+        .add_source(
+            config::Environment::with_prefix("APP")
+                .prefix_separator("_")
+                .separator("__"),
+        )
         .build()?;
     settings.try_deserialize::<Settings>()
 }
