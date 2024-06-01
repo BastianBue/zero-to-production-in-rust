@@ -7,9 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: add dockerfile">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/justfile" beforeDir="false" afterPath="$PROJECT_DIR$/justfile" afterDir="false" />
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: update spec and run sqlx prepare">
       <change beforePath="$PROJECT_DIR$/spec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/spec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -235,7 +233,7 @@
       <workItem from="1716920760273" duration="1134000" />
       <workItem from="1716921905378" duration="21000" />
       <workItem from="1716921936047" duration="2861000" />
-      <workItem from="1717246777071" duration="687000" />
+      <workItem from="1717246777071" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -375,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716836566623</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: update spec and run sqlx prepare">
+      <option name="closed" value="true" />
+      <created>1717247611714</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1717247611714</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +421,8 @@
     <MESSAGE value="chore: sqlx prepare" />
     <MESSAGE value="feat: hirarchical configuration.json" />
     <MESSAGE value="feat: add dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add dockerfile" />
+    <MESSAGE value="feat: update spec and run sqlx prepare" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update spec and run sqlx prepare" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [
@@ -446,10 +453,14 @@
     {
       "branch": "feat/chapter-3.9",
       "currentBranchFilter": true
+    },
+    {
+      "branch": "Chapter-5",
+      "currentBranchFilter": true
     }
   ],
   "lastFilter": {
-    "branch": "feat/chapter-3.9",
+    "branch": "Chapter-5",
     "currentBranchFilter": true
   }
 }]]></component>
