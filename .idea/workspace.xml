@@ -7,8 +7,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: update spec and run sqlx prepare">
-      <change beforePath="$PROJECT_DIR$/spec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/spec.yaml" afterDir="false" />
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="fix: spec.yaml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +233,7 @@
       <workItem from="1716920760273" duration="1134000" />
       <workItem from="1716921905378" duration="21000" />
       <workItem from="1716921936047" duration="2861000" />
-      <workItem from="1717246777071" duration="943000" />
+      <workItem from="1717246777071" duration="1348000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -381,7 +381,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717247611714</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix: spec.yaml">
+      <option name="closed" value="true" />
+      <created>1717247729620</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1717247729620</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix: spec.yaml">
+      <option name="closed" value="true" />
+      <created>1717248034751</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1717248034751</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +438,8 @@
     <MESSAGE value="feat: hirarchical configuration.json" />
     <MESSAGE value="feat: add dockerfile" />
     <MESSAGE value="feat: update spec and run sqlx prepare" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update spec and run sqlx prepare" />
+    <MESSAGE value="fix: spec.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: spec.yaml" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [
