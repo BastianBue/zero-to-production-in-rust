@@ -1,5 +1,6 @@
 name: newsletter
 region: fra
+
 services:
   - name: newsletter
     dockerfile_path: Dockerfile
@@ -17,8 +18,13 @@ services:
       - path: /
 
 databases:
+  # PG = Postgres
   - engine: PG
-    name: newsletter-db
+    # Database name
+    name: newsletter
+    # Again, let's keep the bill lean
     num_nodes: 1
     size: db-s-dev-database
-    version: "12"
+    # Postgres version - using the latest here
+    version: "14"
+
