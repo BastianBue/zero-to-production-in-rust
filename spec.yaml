@@ -12,7 +12,7 @@ services:
     github:
       branch: root-chapter-05
       deploy_on_push: true
-      repo: LukeMathWalker/zero-to-production
+      repo: BastianBue/zero-to-production-in-rust
     # Active probe used by DigitalOcean's to ensure our application is healthy
     health_check:
       # The path to our health check endpoint! It turned out to be useful in the end!
