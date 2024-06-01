@@ -7,7 +7,11 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: add dockerfile" />
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: add dockerfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/justfile" beforeDir="false" afterPath="$PROJECT_DIR$/justfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/spec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,7 +234,8 @@
       <workItem from="1716837339919" duration="1124000" />
       <workItem from="1716920760273" duration="1134000" />
       <workItem from="1716921905378" duration="21000" />
-      <workItem from="1716921936047" duration="682000" />
+      <workItem from="1716921936047" duration="2861000" />
+      <workItem from="1717246777071" duration="687000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -412,38 +417,42 @@
     <MESSAGE value="feat: add dockerfile" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: add dockerfile" />
   </component>
-  <component name="WfRunsListSearchHistory">{
-  &quot;history&quot;: [
+  <component name="WfRunsListSearchHistory"><![CDATA[{
+  "history": [
     {
-      &quot;branch&quot;: &quot;main&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "main",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;main&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "main",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "feat/chapter-3.9",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "feat/chapter-3.9",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "feat/chapter-3.9",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "feat/chapter-3.9",
+      "currentBranchFilter": true
+    },
+    {
+      "branch": "feat/chapter-3.9",
+      "currentBranchFilter": true
     }
   ],
-  &quot;lastFilter&quot;: {
-    &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
-    &quot;currentBranchFilter&quot;: true
+  "lastFilter": {
+    "branch": "feat/chapter-3.9",
+    "currentBranchFilter": true
   }
-}</component>
+}]]></component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />

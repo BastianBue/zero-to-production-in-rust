@@ -12,3 +12,7 @@ build-docker:
   docker build -t newsletter .
 run-docker:
     docker run -p 8080:8080 newsletter
+create-deployment:
+    doctl apps create --spec spec.yaml
+update-deployment:
+    doctl apps update --spec spec.yaml
