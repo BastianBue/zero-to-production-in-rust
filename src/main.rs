@@ -1,4 +1,3 @@
-use config::Environment;
 use newsletter::configuration::get_configuration;
 use newsletter::startup::run;
 use newsletter::telemetry::{get_subscriber, init_subscriber};
@@ -9,7 +8,9 @@ use std::net::TcpListener;
 async fn main() -> std::io::Result<()> {
     let configuration = get_configuration().expect("Failed to read configuration.");
 
-    let connection_pool = PgPool::connect_lazy_with(configuration.database.connect_options_db());
+    let connection_pool = PgPool::connect_with(configuration.database.connect_options_db())
+        .await
+        .expect("Failed to create connection pool.");
 
     let address = format!(
         "{}:{}",
