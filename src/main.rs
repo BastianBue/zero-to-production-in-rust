@@ -1,3 +1,4 @@
+use config::Environment;
 use newsletter::configuration::get_configuration;
 use newsletter::startup::run;
 use newsletter::telemetry::{get_subscriber, init_subscriber};
