@@ -1,5 +1,5 @@
 {
-  "application_settings": {
+  "application": {
     "host": "localhost"
   },
   "database": {
@@ -7,6 +7,7 @@
     "port": 5432,
     "username": "postgres",
     "password": "password",
-    "db_name": "newsletter"
+    "database_name": "newsletter",
+    "require_ssl": false
   }
 }

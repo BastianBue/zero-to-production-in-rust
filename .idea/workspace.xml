@@ -7,11 +7,14 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="fix: health_check">
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="fix: health check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration/base-configuration.json" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/base-configuration.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/dev-configuration.json" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/dev-configuration.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/spec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/dev-configuration.json" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/local-configuration.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/prod-configuration.json" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/prod-configuration.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/subscriptions_it.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/subscriptions_it.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +239,7 @@
       <workItem from="1716920760273" duration="1134000" />
       <workItem from="1716921905378" duration="21000" />
       <workItem from="1716921936047" duration="2861000" />
-      <workItem from="1717246777071" duration="7211000" />
+      <workItem from="1717246777071" duration="7966000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -456,7 +459,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717344375164</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix: health check">
+      <option name="closed" value="true" />
+      <created>1717345101224</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1717345101224</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +485,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(main): split into lib and main to enable integration testing" />
     <MESSAGE value="feat(CI): enable on push" />
     <MESSAGE value="feat(justfile): create" />
     <MESSAGE value="test: create first tests" />
@@ -499,7 +509,8 @@
     <MESSAGE value="feat: connect to do database in prod" />
     <MESSAGE value="fix: dockerfile" />
     <MESSAGE value="fix: health_check" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: health_check" />
+    <MESSAGE value="fix: health check" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: health check" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [

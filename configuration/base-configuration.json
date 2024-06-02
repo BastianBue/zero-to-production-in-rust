@@ -1,5 +1,5 @@
 {
-  "application_settings": {
+  "application": {
     "port": 8080
   }
 }

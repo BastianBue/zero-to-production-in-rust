@@ -8,11 +8,11 @@ use std::net::TcpListener;
 async fn main() -> std::io::Result<()> {
     let configuration = get_configuration().expect("Failed to read configuration.");
 
-    let connection_pool = PgPool::connect_lazy_with(configuration.database.connect_option());
+    let connection_pool = PgPool::connect_lazy_with(configuration.database.connect_options_db());
 
     let address = format!(
         "{}:{}",
-        configuration.application_settings.host, configuration.application_settings.port
+        configuration.application.host, configuration.application.port
     );
     let listener = TcpListener::bind(address)?;
 
