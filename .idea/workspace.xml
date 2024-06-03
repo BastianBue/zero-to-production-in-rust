@@ -7,9 +7,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: migrate the database from within the container">
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: use connection pool from the db function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -258,7 +257,7 @@
       <workItem from="1716921905378" duration="21000" />
       <workItem from="1716921936047" duration="2861000" />
       <workItem from="1717246777071" duration="11815000" />
-      <workItem from="1717437870158" duration="4445000" />
+      <workItem from="1717437870158" duration="4510000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -518,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717442197933</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="feat: use connection pool from the db function">
+      <option name="closed" value="true" />
+      <created>1717442400612</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1717442400612</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: db scripts" />
     <MESSAGE value="refactor modularize" />
     <MESSAGE value="feat: add a configuration file" />
     <MESSAGE value="test: connect to database from tests" />
@@ -561,7 +567,8 @@
     <MESSAGE value="feat: enforce connection on startup" />
     <MESSAGE value="feat: migrate db on startup" />
     <MESSAGE value="feat: migrate the database from within the container" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: migrate the database from within the container" />
+    <MESSAGE value="feat: use connection pool from the db function" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: use connection pool from the db function" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [

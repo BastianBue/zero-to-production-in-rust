@@ -2,7 +2,6 @@ use newsletter::configuration::get_configuration;
 use newsletter::database::migrate_db;
 use newsletter::startup::run;
 use newsletter::telemetry::{get_subscriber, init_subscriber};
-use sqlx::postgres::PgPool;
 use std::net::TcpListener;
 
 #[tokio::main]
