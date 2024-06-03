@@ -7,10 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="fix: health check">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-    </list>
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: migrate db on startup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +27,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "BastianBue"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:/BastianBue/zero-to-production-in-rust.git",
+    "accountId": "431372e2-3269-4828-b7d1-19c0fc451b0d"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.201/src/ser/mod.rs" root0="SKIP_INSPECTION" />
   </component>
@@ -234,7 +243,8 @@
       <workItem from="1716920760273" duration="1134000" />
       <workItem from="1716921905378" duration="21000" />
       <workItem from="1716921936047" duration="2861000" />
-      <workItem from="1717246777071" duration="10960000" />
+      <workItem from="1717246777071" duration="11815000" />
+      <workItem from="1717437870158" duration="3815000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -470,7 +480,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717346418554</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: migrate db on startup">
+      <option name="closed" value="true" />
+      <created>1717441715969</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1717441715969</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,8 +506,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(CI): enable on push" />
-    <MESSAGE value="feat(justfile): create" />
     <MESSAGE value="test: create first tests" />
     <MESSAGE value="fix: db scripts" />
     <MESSAGE value="refactor modularize" />
@@ -513,48 +529,50 @@
     <MESSAGE value="fix: dockerfile" />
     <MESSAGE value="fix: health_check" />
     <MESSAGE value="fix: health check" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: health check" />
+    <MESSAGE value="feat: enforce connection on startup" />
+    <MESSAGE value="feat: migrate db on startup" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: migrate db on startup" />
   </component>
-  <component name="WfRunsListSearchHistory"><![CDATA[{
-  "history": [
+  <component name="WfRunsListSearchHistory">{
+  &quot;history&quot;: [
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "feat/chapter-3.9",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "feat/chapter-3.9",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "feat/chapter-3.9",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "feat/chapter-3.9",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "feat/chapter-3.9",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;feat/chapter-3.9&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "Chapter-5",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;Chapter-5&quot;,
+      &quot;currentBranchFilter&quot;: true
     }
   ],
-  "lastFilter": {
-    "branch": "Chapter-5",
-    "currentBranchFilter": true
+  &quot;lastFilter&quot;: {
+    &quot;branch&quot;: &quot;Chapter-5&quot;,
+    &quot;currentBranchFilter&quot;: true
   }
-}]]></component>
+}</component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
