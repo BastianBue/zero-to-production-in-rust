@@ -9,8 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: use connection pool from the db function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/subscriptions_it.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/subscriptions_it.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feat/chapter-3.9" />
+        <entry key="$PROJECT_DIR$" value="Chapter-5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,6 +84,7 @@
     &quot;Cargo.Test signup_returns_400_with_invalid_data.executor&quot;: &quot;Run&quot;,
     &quot;Cargo.Test subscribe_returns_a_200_for_valid_form_data (1).executor&quot;: &quot;Run&quot;,
     &quot;Cargo.Test subscribe_returns_a_200_for_valid_form_data.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test subscribe_returns_a_200_when_fields_are_present_but_empty.executor&quot;: &quot;Run&quot;,
     &quot;Cargo.Test subscribe_returns_a_400_when_data_is_missing.executor&quot;: &quot;Run&quot;,
     &quot;Cargo.Test subscriptions_it.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -127,24 +127,7 @@
       <command value="just spin-up-db" />
     </option>
   </component>
-  <component name="RunManager" selected="Cargo.Test subscribe_returns_a_400_when_data_is_missing">
-    <configuration name="Test signup_returns_200_with_valid_data (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package zero-to-production-in-rust --test subscriptions_it signup_returns_200_with_valid_data -- --exact" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <option name="emulateTerminal" value="true" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Cargo.Test subscribe_returns_a_200_when_fields_are_present_but_empty">
     <configuration name="Test subscribe_returns_a_200_for_valid_form_data (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package newsletter --test subscriptions_it subscribe_returns_a_200_for_valid_form_data -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -164,6 +147,23 @@
     </configuration>
     <configuration name="Test subscribe_returns_a_200_for_valid_form_data" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package zero-to-production-in-rust --test subscriptions_it subscribe_returns_a_200_for_valid_form_data -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test subscribe_returns_a_200_when_fields_are_present_but_empty" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package newsletter --test subscriptions_it subscribe_returns_a_200_when_fields_are_present_but_empty -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -215,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cargo.Test subscriptions_it" />
+        <item itemvalue="Cargo.Test subscribe_returns_a_200_when_fields_are_present_but_empty" />
         <item itemvalue="Cargo.Test subscribe_returns_a_400_when_data_is_missing" />
-        <item itemvalue="Cargo.Test subscribe_returns_a_200_for_valid_form_data" />
         <item itemvalue="Cargo.Test subscribe_returns_a_200_for_valid_form_data (1)" />
-        <item itemvalue="Cargo.Test signup_returns_200_with_valid_data (1)" />
+        <item itemvalue="Cargo.Test subscriptions_it" />
+        <item itemvalue="Cargo.Test subscribe_returns_a_200_for_valid_form_data" />
       </list>
     </recent_temporary>
   </component>
