@@ -7,25 +7,21 @@ use std::net::TcpListener;
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
+    init_subscriber(get_subscriber(
+        "newsletter".into(),
+        "info".into(),
+        std::io::stdout,
+    ));
+
     let configuration = get_configuration().expect("Failed to read configuration.");
 
-    migrate_db().await;
-
-    let connection_pool = PgPool::connect_with(configuration.database.connect_options_db())
-        .await
-        .expect("Failed to create connection pool.");
+    let connection_pool = migrate_db().await;
 
     let address = format!(
         "{}:{}",
         configuration.application.host, configuration.application.port
     );
     let listener = TcpListener::bind(address)?;
-
-    init_subscriber(get_subscriber(
-        "newsletter".into(),
-        "info".into(),
-        std::io::stdout,
-    ));
 
     run(listener, connection_pool)?.await?;
     Ok(())

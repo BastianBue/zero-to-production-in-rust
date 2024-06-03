@@ -7,10 +7,10 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: migrate db on startup">
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: migrate the database from within the container">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +258,7 @@
       <workItem from="1716921905378" duration="21000" />
       <workItem from="1716921936047" duration="2861000" />
       <workItem from="1717246777071" duration="11815000" />
-      <workItem from="1717437870158" duration="4247000" />
+      <workItem from="1717437870158" duration="4445000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -510,7 +510,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717441763975</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat: migrate the database from within the container">
+      <option name="closed" value="true" />
+      <created>1717442197933</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717442197933</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +536,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test: create first tests" />
     <MESSAGE value="fix: db scripts" />
     <MESSAGE value="refactor modularize" />
     <MESSAGE value="feat: add a configuration file" />
@@ -553,7 +560,8 @@
     <MESSAGE value="fix: health check" />
     <MESSAGE value="feat: enforce connection on startup" />
     <MESSAGE value="feat: migrate db on startup" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: migrate db on startup" />
+    <MESSAGE value="feat: migrate the database from within the container" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: migrate the database from within the container" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
