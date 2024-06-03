@@ -1,6 +1,7 @@
 use crate::configuration::get_configuration;
 use sqlx::{Connection, Executor, PgConnection, PgPool};
 
+#[tracing::instrument(name = "Migrating the database")]
 pub async fn migrate_db() {
     let config = get_configuration().expect("Failed to read configuration.");
 

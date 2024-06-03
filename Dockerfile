@@ -26,5 +26,6 @@ RUN apt-get update -y \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=builder /app/target/release/newsletter newsletter
 COPY configuration configuration
+COPY migrations migrations
 ENV APP_ENVIRONMENT production
 ENTRYPOINT ["./newsletter"]

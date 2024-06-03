@@ -7,7 +7,11 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: migrate db on startup" />
+    <list default="true" id="fdce6d6a-9ef5-4900-bc60-d99be987af5a" name="Changes" comment="feat: migrate db on startup">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.rs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,18 +31,28 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "BastianBue"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BastianBue&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:/BastianBue/zero-to-production-in-rust.git",
-    "accountId": "431372e2-3269-4828-b7d1-19c0fc451b0d"
+}</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="feat: migrate db on startup" />
+        <option name="rewordedMessage" value="feat: migrate db on startup" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="11ac81bf5fa4b04aef295c34acc7ba78a683737b" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:/BastianBue/zero-to-production-in-rust.git&quot;,
+    &quot;accountId&quot;: &quot;431372e2-3269-4828-b7d1-19c0fc451b0d&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.201/src/ser/mod.rs" root0="SKIP_INSPECTION" />
   </component>
@@ -244,7 +258,7 @@
       <workItem from="1716921905378" duration="21000" />
       <workItem from="1716921936047" duration="2861000" />
       <workItem from="1717246777071" duration="11815000" />
-      <workItem from="1717437870158" duration="3815000" />
+      <workItem from="1717437870158" duration="4247000" />
     </task>
     <task id="LOCAL-00001" summary="feat(CI): implement CI">
       <created>1710961184572</created>
@@ -488,7 +502,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717441715969</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="feat: migrate db on startup">
+      <option name="closed" value="true" />
+      <created>1717441763975</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1717441763975</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
