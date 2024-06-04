@@ -1,5 +1,4 @@
-use crate::domain::new_subscriber::NewSubscriber;
-use crate::domain::subscriber_name::SubscriberName;
+use crate::domain::{NewSubscriber, SubscriberName};
 use actix_web::{post, web, HttpResponse};
 use chrono::Utc;
 use sqlx::PgPool;
@@ -22,9 +21,14 @@ subscriber_name = %form.name
 )
 )]
 pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> HttpResponse {
-    let new_subscriber = NewSubscriber {
-        email: form.0.email,
-        name: SubscriberName::parse(form.0.name).expect("failed to parse subscriber"),
+    let new_subscriber = match SubscriberName::parse(form.0.name) {
+        Ok(name) => NewSubscriber {
+            email: form.0.email.clone(),
+            name,
+        },
+        Err(_) => {
+            return HttpResponse::BadRequest().finish();
+        }
     };
 
     match insert_subscriber(&pool, new_subscriber).await {
