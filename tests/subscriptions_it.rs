@@ -1,4 +1,5 @@
 use newsletter::configuration::{get_configuration, DatabaseSettings};
+use newsletter::mailing::EmailClient;
 use newsletter::startup::run;
 use newsletter::telemetry::{get_subscriber, init_subscriber};
 use once_cell::sync::Lazy;
@@ -45,7 +46,16 @@ async fn spawn_app() -> TestApp {
     configuration.database.database_name = Uuid::new_v4().to_string();
     let connection_pool = configure_database(&configuration.database).await;
 
-    let server = run(listener, connection_pool.clone()).expect("Failed to bind address");
+    let email_client = EmailClient::new(
+        configuration
+            .email_client
+            .sender()
+            .expect("Invalid sender email address."),
+        configuration.email_client.base_url,
+    );
+
+    let server =
+        run(listener, connection_pool.clone(), email_client).expect("Failed to bind address");
     let _ = tokio::spawn(server);
 
     TestApp {

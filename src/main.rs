@@ -1,5 +1,6 @@
 use newsletter::configuration::get_configuration;
 use newsletter::database::migrate_db;
+use newsletter::mailing::EmailClient;
 use newsletter::startup::run;
 use newsletter::telemetry::{get_subscriber, init_subscriber};
 use std::net::TcpListener;
@@ -22,6 +23,14 @@ async fn main() -> std::io::Result<()> {
     );
     let listener = TcpListener::bind(address)?;
 
-    run(listener, connection_pool)?.await?;
+    let email_client = EmailClient::new(
+        configuration
+            .email_client
+            .sender()
+            .expect("Invalid sender email address."),
+        configuration.email_client.base_url,
+    );
+
+    run(listener, connection_pool, email_client)?.await?;
     Ok(())
 }
