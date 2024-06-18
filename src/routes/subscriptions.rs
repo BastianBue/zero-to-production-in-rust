@@ -1,4 +1,4 @@
-use crate::domain::{NewSubscriber, SubscriberName};
+use crate::domain::{NewSubscriber, SubscriberEmail, SubscriberName};
 use actix_web::{post, web, HttpResponse};
 use chrono::Utc;
 use sqlx::PgPool;
@@ -8,6 +8,17 @@ use uuid::Uuid;
 pub struct FormData {
     email: String,
     name: String,
+}
+
+impl TryFrom<FormData> for NewSubscriber {
+    type Error = String;
+
+    fn try_from(value: FormData) -> Result<Self, Self::Error> {
+        let name = SubscriberName::parse(value.name)?;
+        let email = SubscriberEmail::parse(value.email)?;
+
+        Ok(NewSubscriber { name, email })
+    }
 }
 
 #[post("/subscriptions")]
@@ -21,14 +32,9 @@ subscriber_name = %form.name
 )
 )]
 pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> HttpResponse {
-    let new_subscriber = match SubscriberName::parse(form.0.name) {
-        Ok(name) => NewSubscriber {
-            email: form.0.email.clone(),
-            name,
-        },
-        Err(_) => {
-            return HttpResponse::BadRequest().finish();
-        }
+    let new_subscriber = match NewSubscriber::try_from(form.0) {
+        Ok(subscriber) => subscriber,
+        Err(_) => return HttpResponse::BadRequest().finish(),
     };
 
     match insert_subscriber(&pool, new_subscriber).await {
@@ -51,7 +57,7 @@ pub async fn insert_subscriber(
     VALUES ($1, $2, $3, $4)
             "#,
         Uuid::new_v4(),
-        subscriber.email,
+        subscriber.email.as_ref(),
         subscriber.name.as_ref(),
         Utc::now()
     )
