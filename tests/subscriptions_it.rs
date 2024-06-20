@@ -3,6 +3,7 @@ use newsletter::mailing::EmailClient;
 use newsletter::startup::run;
 use newsletter::telemetry::{get_subscriber, init_subscriber};
 use once_cell::sync::Lazy;
+use secrecy::ExposeSecret;
 use sqlx::{Connection, Executor, PgConnection, PgPool};
 use std::net::TcpListener;
 use uuid::Uuid;
@@ -52,6 +53,7 @@ async fn spawn_app() -> TestApp {
             .sender()
             .expect("Invalid sender email address."),
         configuration.email_client.base_url,
+        configuration.email_client.api_token,
     );
 
     let server =

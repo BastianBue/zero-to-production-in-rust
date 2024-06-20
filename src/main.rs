@@ -29,6 +29,7 @@ async fn main() -> std::io::Result<()> {
             .sender()
             .expect("Invalid sender email address."),
         configuration.email_client.base_url,
+        configuration.email_client.api_token,
     );
 
     run(listener, connection_pool, email_client)?.await?;
