@@ -14,6 +14,7 @@
   "email_client": {
     "base_url": "localhost",
     "sender_email": "test@gmail.com",
-    "api_token": "example-token"
+    "api_token": "example-token",
+    "timeout_millis": "2000"
   }
 }
